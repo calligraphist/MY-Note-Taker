@@ -1,9 +1,23 @@
-// Import Express.js
+// Importing Express.js
 const express = require('express');
 
-// Initialize an instance of Express.js
+// Initializing an instance of Express.js
 const app = express();      
 
-// Specify on which port the Express.js server will run
-const PORT = 3001;
+// Specifying on which port the Express.js server will run
+const PORT =  process.env.PORT || 3001;
 
+const htmlRoutes = require('./routes/htmlRoutes');
+const notesRoutes = require('./routes/notesRoutes');
+
+// Static middleware pointing to the public folder
+app.use(express.static('public'));
+
+//API routes
+app.use('/', htmlRoutes);
+app.use('/api', notesRoutes);
+
+// listen() method is responsible for listening for incoming connections on the specified port 
+app.listen(PORT, () =>
+  console.log(`Serving static asset routes on port ${PORT}!`)
+);
