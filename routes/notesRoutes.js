@@ -1,29 +1,26 @@
 const router = require('express').Router();
-
-let {notesArray} = require('../db/db.json');
-
-// notes are available at api/notes in JSON 
+const { response } = require('express');
+const { readFile, writeFile } = require('fs/promises')
+const getNotes = () => {
+  return readFile('db/db.json', 'utf-8').then(notes => [].concat(JSON.parse(notes)))
+}
+// notes are available at notes in JSON 
 router.get('/notes', (req, res) => {
-  let results = notesArray;
-  res.json(results);
+  getNotes().then(notes => res.json(notes))
 });
+router.post('/notes', (req, res) => {
+  getNotes().then(oldNotes => {
+    const newNotes = [...oldNotes, { title: req.body.title, text: req.body.text, id: Math.floor(Math.random() * 1000).toString() }]
+    writeFile('db/db.json', JSON.stringify(newNotes)).then(() => res.json({ msg: 'ok' }))
+  })
+})
+router.delete('/notes/:id', (req, res) => {
+  getNotes().then(oldNotes => {
 
-// router.post('/notes', (req, res) => {
-//   // set id based on what the next index of the array will be
-//   if(notesArray){
-//   req.body.id = notesArray.length.toString();
-//   } else 
-//   {req.body.id = 0}
-//   res.json(createNewNote(req.body, notesArray));
-// });
+    const updatedNotes = oldNotes.filter(note => note.id !== req.params.id)
+    writeFile('db/db.json', JSON.stringify(updatedNotes)).then(() => res.json({ msg: 'ok' }))
 
-// // Route parameters :👌 
-// router.delete('/notes/:id', async (req, res) => {
-//   const { id } = req.params
-//   notesArray = await deleteNote(id, notesArray);
-//   res.json(notesArray);
-// });
-
-
+  })
+})
 
 module.exports = router;

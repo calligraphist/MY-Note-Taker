@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 //API routes
 app.use('/', htmlRoutes);
-app.use('/', notesRoutes);
+app.use('/api', notesRoutes);
 
 // listen() method is responsible for listening for incoming connections on the specified port 
 app.listen(PORT, () =>
