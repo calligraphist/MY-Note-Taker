@@ -11,11 +11,13 @@ const htmlRoutes = require('./routes/htmlRoutes');
 const notesRoutes = require('./routes/notesRoutes');
 
 // Static middleware pointing to the public folder
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static('public'));
 
 //API routes
 app.use('/', htmlRoutes);
-app.use('/api', notesRoutes);
+app.use('/', notesRoutes);
 
 // listen() method is responsible for listening for incoming connections on the specified port 
 app.listen(PORT, () =>
