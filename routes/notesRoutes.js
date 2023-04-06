@@ -1,11 +1,6 @@
 const router = require('express').Router();
-const notesRoutes = require('./notesRoutes');
 
-
-
-
-const { createNewNote, deleteNote } = require('../../lib/notes');
-let { notesArray } = require('../../db/notes');
+let {notesArray} = require('../db/db.json');
 
 // notes are available at api/notes in JSON 
 router.get('/notes', (req, res) => {
@@ -29,6 +24,6 @@ router.get('/notes', (req, res) => {
 //   res.json(notesArray);
 // });
 
-router.use(notesRoutes);
+
 
 module.exports = router;
