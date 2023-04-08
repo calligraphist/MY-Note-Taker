@@ -10,7 +10,7 @@
 6. Questions
 
 ## Description of Project
-   My project is commandline node.js application to create a note taker application by taking in user input by asking few questions. User can easily create, save and delete in this note taker.
+   My project is commandline node.js application to create a note taker application. User can easily create, save and delete their notes in this note taker application. Application is deployed on Heroku.
 
 
 ## Screenshot
@@ -27,7 +27,7 @@ Git clone this repository using terminal and open the file in VS Code (or in the
 
 ## Acknowledgements
 
-This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to its-jefe and  for thge code inspiration. My instructor is very knowledgeable and always ready to help.
+This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to its-jefe for the code inspiration. My instructor is very knowledgeable and always ready to help. My tutor helped me with notes route.
 
 
 ## Questions
