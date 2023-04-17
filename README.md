@@ -15,7 +15,8 @@
 
 ## Screenshot
 Following is the screenshot of my test README:
-![this fullfill all the requirements](./.png)
+![this fullfill all the requirements](./notetaker1.png)
+![this fullfill all the requirements](./notetaker2.png)
 
 ## Installation 
 
@@ -23,11 +24,11 @@ Git clone this repository using terminal and open the file in VS Code (or in the
 
 ## Deployed application link
 
-
+https://shielded-dusk-65930.herokuapp.com/
 
 ## Acknowledgements
 
-This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to its-jefe for the code inspiration. My instructor is very knowledgeable and always ready to help. My tutor helped me with notes route.
+This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to its-jefe for the code inspiration. My instructor is very knowledgeable and always ready to help, Thanks for your valuable time. My tutor helped me with notes route.
 
 
 ## Questions
